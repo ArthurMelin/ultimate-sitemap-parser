@@ -280,7 +280,7 @@ class XMLSitemapParser(AbstractSitemapParser):
         else:
             raise SitemapXMLParsingException("Unable to determine namespace for element '{}'".format(name))
 
-        if '/sitemap/' in namespace_url:
+        if namespace_url == '' or '/sitemap/' in namespace_url:
             name = 'sitemap:{}'.format(name)
         elif '/sitemap-news/' in namespace_url:
             name = 'news:{}'.format(name)
